@@ -84,8 +84,8 @@ input{
   text-align: right;
 }
 span{
-  color: cyan;
-  background-color: blue;
+  color: grey;
+  background-color: pink;
 }
 span#overlap, span#numCheck{
   color: red;

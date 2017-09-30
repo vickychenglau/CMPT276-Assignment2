@@ -47,11 +47,17 @@ function numericCheck(val){
 }
 
 function lengthO(low, up) {
-  var length = ""
-
+  var length = "";
+  var count = 0;
   for(var i=0; i<grades.length; i++) {
     if((grades[i] >= low) && (grades[i] < up)) {
-      length = length + "+";
+      if(count%2 == 0){
+        length = length + "|^v^|";
+      }
+      else{
+        length = length + "|^u^|";
+      }
+      count++;
     }
   }
   return length;
