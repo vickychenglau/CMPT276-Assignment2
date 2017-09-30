@@ -24,12 +24,14 @@ var vals = [maxVal, A1Val, A2Val, A3Val, B1Val,  B2Val, B3Val,
             C1Val, C2Val, C3Val, DVal, FVal]
 
 function overlapCheck() {
+  var overlap = document.getElementById("overlap");
   for(var i=0; i<vals.length-1; i++) {
     if(vals[i] <= vals[i+1]){
-      return true;
+      overlap.innerText = "\n Warning! \n There is overlap in the lower bounds! \n Resulting histogram may be inaccurate.";
+      return;
     }
   }
-  return false;
+  overlap.innerText = "";
 }
 
 function lengthO(low, up) {
@@ -46,26 +48,22 @@ function lengthO(low, up) {
 
 function getMaxVal() {
   var val = document.getElementById("maxVal");
-  maxVal = parseFloat(val.value);
+  vals[0] = parseFloat(val.value);
 
-  var length = lengthO(A1Val, maxVal);
+  var length = lengthO(vals[1], vals[0]);
 
   var A1In = document.getElementById("A1In");
   A1In.innerText = length;
 
-  var check = overlapCheck();
-  if(check == true){
-    var overlap = document.getElementById("overlap");
-    overlap.innerText = "Warning! There is overlap in the lower bounds! Resulting Histogram may be inaccurate.";
-  }
+  overlapCheck();
 }
 
 function getA1Val() {
   var val = document.getElementById("A1Val");
-  A1Val = parseFloat(val.value);
+  vals[1] = parseFloat(val.value);
 
-  var length = lengthO(A1Val, maxVal);
-  var length2 = lengthO(A2Val, A1Val);
+  var length = lengthO(vals[1], vals[0]);
+  var length2 = lengthO(vals[2], vals[1]);
 
   var A1In = document.getElementById("A1In");
   A1In.innerText = length;
@@ -73,19 +71,15 @@ function getA1Val() {
   var A2In = document.getElementById("A2In");
   A2In.innerText = length2;
 
-  var check = overlapCheck();
-  if(check == true){
-    var overlap = document.getElementById("overlap");
-    overlap.innerText = "Warning! There is overlap in the lower bounds! Resulting Histogram may be inaccurate.";
-  }
+  overlapCheck();
 }
 
 function getA2Val() {
   var val = document.getElementById("A2Val");
-  A2Val = parseFloat(val.value);
+  vals[2] = parseFloat(val.value);
 
-  var length = lengthO(A2Val, A1Val);
-  var length2 = lengthO(A3Val, A2Val);
+  var length = lengthO(vals[2], vals[1]);
+  var length2 = lengthO(vals[3], vals[2]);
 
   var A2In = document.getElementById("A2In");
   A2In.innerText = length;
@@ -93,19 +87,15 @@ function getA2Val() {
   var A3In = document.getElementById("A3In");
   A3In.innerText = length2;
 
-  var check = overlapCheck();
-  if(check == true){
-    var overlap = document.getElementById("overlap");
-    overlap.innerText = "Warning! There is overlap in the lower bounds! Resulting Histogram may be inaccurate.";
-  }
+  overlapCheck();
 }
 
 function getA3Val() {
   var val = document.getElementById("A3Val");
-  A3Val = parseFloat(val.value);
+  vals[3] = parseFloat(val.value);
 
-  var length = lengthO(A3Val, A2Val);
-  var length2 = lengthO(B1Val, A3Val);
+  var length = lengthO(vals[3], vals[2]);
+  var length2 = lengthO(vals[4], vals[3]);
 
   var A3In = document.getElementById("A3In");
   A3In.innerText = length;
@@ -113,19 +103,15 @@ function getA3Val() {
   var B1In = document.getElementById("B1In");
   B1In.innerText = length2;
 
-  var check = overlapCheck();
-  if(check == true){
-    var overlap = document.getElementById("overlap");
-    overlap.innerText = "Warning! There is overlap in the lower bounds! Resulting Histogram may be inaccurate.";
-  }
+  overlapCheck();
 }
 
 function getB1Val() {
   var val = document.getElementById("B1Val");
-  B1Val = parseFloat(val.value);
+  vals[4] = parseFloat(val.value);
 
-  var length = lengthO(B1Val, A3Val);
-  var length2 = lengthO(B2Val, B1Val);
+  var length = lengthO(vals[4], vals[3]);
+  var length2 = lengthO(vals[5], vals[4]);
 
   var B1In = document.getElementById("B1In");
   B1In.innerText = length;
@@ -133,19 +119,15 @@ function getB1Val() {
   var B2In = document.getElementById("B2In");
   B2In.innerText = length2;
 
-  var check = overlapCheck();
-  if(overlapCheck()){
-    var overlap = document.getElementById("overlap");
-    overlap.innerText = "Warning! There is overlap in the lower bounds! Resulting Histogram may be inaccurate.";
-  }
+  overlapCheck();
 }
 
 function getB2Val() {
   var val = document.getElementById("B2Val");
-  B2Val = parseFloat(val.value);
+  vals[5] = parseFloat(val.value);
 
-  var length = lengthO(B2Val, B1Val);
-  var length2 = lengthO(B3Val, B2Val);
+  var length = lengthO(vals[5], vals[4]);
+  var length2 = lengthO(vals[6], vals[5]);
 
   var B2In = document.getElementById("B2In");
   B2In.innerText = length;
@@ -153,19 +135,15 @@ function getB2Val() {
   var B3In = document.getElementById("B3In");
   B3In.innerText = length2;
 
-  var check = overlapCheck();
-  if(check == true){
-    var overlap = document.getElementById("overlap");
-    overlap.innerText = "Warning! There is overlap in the lower bounds! Resulting Histogram may be inaccurate.";
-  }
+  overlapCheck();
 }
 
 function getB3Val() {
   var val = document.getElementById("B3Val");
-  B3Val = parseFloat(val.value);
+  vals[6] = parseFloat(val.value);
 
-  var length = lengthO(B3Val, B2Val);
-  var length2 = lengthO(C1Val, B3Val);
+  var length = lengthO(vals[6], vals[5]);
+  var length2 = lengthO(vals[7], vals[6]);
 
   var B3In = document.getElementById("B3In");
   B3In.innerText = length;
@@ -173,19 +151,15 @@ function getB3Val() {
   var C1In = document.getElementById("C1In");
   C1In.innerText = length2;
 
-  var check = overlapCheck();
-  if(check == true){
-    var overlap = document.getElementById("overlap");
-    overlap.innerText = "Warning! There is overlap in the lower bounds! Resulting Histogram may be inaccurate.";
-  }
+  overlapCheck();
 }
 
 function getC1Val() {
   var val = document.getElementById("C1Val");
-  C1Val = parseFloat(val.value);
+  vals[7] = parseFloat(val.value);
 
-  var length = lengthO(C1Val, B3Val);
-  var length2 = lengthO(C2Val, C1Val);
+  var length = lengthO(vals[7], vals[6]);
+  var length2 = lengthO(vals[8], vals[7]);
 
   var C1In = document.getElementById("C1In");
   C1In.innerText = length;
@@ -193,19 +167,15 @@ function getC1Val() {
   var C2In = document.getElementById("C2In");
   C2In.innerText = length2;
 
-  var check = overlapCheck();
-  if(check == true){
-    var overlap = document.getElementById("overlap");
-    overlap.innerText = "Warning! There is overlap in the lower bounds! Resulting Histogram may be inaccurate.";
-  }
+  overlapCheck();
 }
 
 function getC2Val() {
   var val = document.getElementById("C2Val");
-  C2Val = parseFloat(val.value);
+  vals[8] = parseFloat(val.value);
 
-  var length = lengthO(C2Val, C1Val);
-  var length2 = lengthO(C3Val, C2Val);
+  var length = lengthO(vals[8], vals[7]);
+  var length2 = lengthO(vals[9], vals[8]);
 
   var C2In = document.getElementById("C2In");
   C2In.innerText = length;
@@ -213,19 +183,15 @@ function getC2Val() {
   var C3In = document.getElementById("C3In");
   C3In.innerText = length2;
 
-  var check = overlapCheck();
-  if(check == true){
-    var overlap = document.getElementById("overlap");
-    overlap.innerText = "Warning! There is overlap in the lower bounds! Resulting Histogram may be inaccurate.";
-  }
+  overlapCheck();
 }
 
 function getC3Val() {
   var val = document.getElementById("C3Val");
-  C3Val = parseFloat(val.value);
+  vals[9] = parseFloat(val.value);
 
-  var length = lengthO(C3Val, C2Val);
-  var length2 = lengthO(DVal, C3Val);
+  var length = lengthO(vals[9], vals[8]);
+  var length2 = lengthO(vals[10], vals[9]);
 
   var C3In = document.getElementById("C3In");
   C3In.innerText = length;
@@ -233,19 +199,15 @@ function getC3Val() {
   var DIn = document.getElementById("DIn");
   DIn.innerText = length2;
 
-  var check = overlapCheck();
-  if(check == true){
-    var overlap = document.getElementById("overlap");
-    overlap.innerText = "Warning! There is overlap in the lower bounds! Resulting Histogram may be inaccurate.";
-  }
+  overlapCheck();
 }
 
 function getDVal() {
   var val = document.getElementById("DVal");
-  DVal = parseFloat(val.value);
+  vals[10] = parseFloat(val.value);
 
-  var length = lengthO(DVal, C3Val);
-  var length2 = lengthO(FVal, DVal);
+  var length = lengthO(vals[10], vals[9]);
+  var length2 = lengthO(vals[11], vals[10]);
 
   var DIn = document.getElementById("DIn");
   DIn.innerText = length;
@@ -253,25 +215,18 @@ function getDVal() {
   var FIn = document.getElementById("FIn");
   FIn.innerText = length2;
 
-  var check = overlapCheck();
-  if(check == true){
-    var overlap = document.getElementById("overlap");
-    overlap.innerText = "Warning! There is overlap in the lower bounds! Resulting Histogram may be inaccurate.";
-  }
+  overlapCheck();
 }
 
 function getFVal() {
   var val = document.getElementById("A3Val");
-  A3Val = parseFloat(val.value);
+  vals[11] = parseFloat(val.value);
 
-  var length = lengthO(FVal, DVal);
+  var length = lengthO(vals[11], vals[12]);
 
   var FIn = document.getElementById("FIn");
   FIn.innerText = length;
 
   var overlap = document.getElementById("overlap");
-  var check = overlapCheck();
-  if(check == true){
-    overlap.innerText = "Warning! There is overlap in the lower bounds! Resulting Histogram may be inaccurate.";
-  }
+  overlapCheck();
 }
