@@ -1,7 +1,7 @@
-var grades = [65.95, 56.98, 78.62, 96.1, 90.3, 72.24, 92.34,
-              60.00, 81.43, 86.22, 88.33,9.03,49.93, 52.34,
-              53.11, 50.10,88.88, 55.32, 55.69, 61.68,70.44,
-              70.54,90.0, 71.11, 80.01];
+var grades = [65.95, 56.98, 78.62, 96.10, 90.3, 72.24, 92.34,
+              60.00, 81.43, 86.22, 88.33, 9.03, 49.93, 52.34,
+              53.11, 50.10, 88.88, 55.32, 55.69, 61.68,70.44,
+              70.54, 90.00, 71.11, 80.01];
 
 var maxVal = 100.00;
 
@@ -39,7 +39,7 @@ function numericCheck(val){
   var numCheck = document.getElementById("numCheck");
 
   if(isNaN(val) == true){
-    numCheck.innerText = "\n Error! \n Please enters numbers only. \n";
+    numCheck.innerText = "\n Warning! Please enters numbers only. \n";
   }
   else{
     numCheck.innerText = "";
@@ -49,12 +49,11 @@ function numericCheck(val){
 function lengthO(low, up) {
   var length = ""
 
-  for(var i=0; i<grades.length-1; i++) {
-    if( grades[i] >= low && grades[i] < up) {
+  for(var i=0; i<grades.length; i++) {
+    if((grades[i] >= low) && (grades[i] < up)) {
       length = length + "O";
     }
   }
-
   return length;
 }
 
@@ -141,6 +140,7 @@ function getB1Val() {
 
 function getB2Val() {
   var val = document.getElementById("B2Val");
+  numericCheck(val.value);
   vals[5] = parseFloat(val.value);
 
   var length = lengthO(vals[5], vals[4]);
@@ -157,6 +157,7 @@ function getB2Val() {
 
 function getB3Val() {
   var val = document.getElementById("B3Val");
+  numericCheck(val.value);
   vals[6] = parseFloat(val.value);
 
   var length = lengthO(vals[6], vals[5]);
@@ -173,6 +174,7 @@ function getB3Val() {
 
 function getC1Val() {
   var val = document.getElementById("C1Val");
+  numericCheck(val.value);
   vals[7] = parseFloat(val.value);
 
   var length = lengthO(vals[7], vals[6]);
@@ -189,6 +191,7 @@ function getC1Val() {
 
 function getC2Val() {
   var val = document.getElementById("C2Val");
+  numericCheck(val.value);
   vals[8] = parseFloat(val.value);
 
   var length = lengthO(vals[8], vals[7]);
@@ -205,6 +208,7 @@ function getC2Val() {
 
 function getC3Val() {
   var val = document.getElementById("C3Val");
+  numericCheck(val.value);
   vals[9] = parseFloat(val.value);
 
   var length = lengthO(vals[9], vals[8]);
@@ -221,6 +225,7 @@ function getC3Val() {
 
 function getDVal() {
   var val = document.getElementById("DVal");
+  numericCheck(val.value);
   vals[10] = parseFloat(val.value);
 
   var length = lengthO(vals[10], vals[9]);
@@ -237,9 +242,10 @@ function getDVal() {
 
 function getFVal() {
   var val = document.getElementById("FVal");
+  numericCheck(val.value);
   vals[11] = parseFloat(val.value);
 
-  var length = lengthO(vals[11], vals[12]);
+  var length = lengthO(vals[11], vals[10]);
 
   var FIn = document.getElementById("FIn");
   FIn.innerText = length;
