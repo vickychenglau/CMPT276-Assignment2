@@ -4,7 +4,7 @@
 <head>
 	<title>Histogram</title>
 	<link rel="stylesheet" href="./histogram.css" type="text/css" />
-	<script type"text/javascript" src="calculate.js" ></script>
+	<script type"text/javascript" src="./calculate.js" ></script>
 </head>
 
 <body>
@@ -88,7 +88,7 @@
 				<td id="lbb">
 					<input id="B2Val" type="text" size="5" value="75.00"
 									onKeyPress="getB2Val()"
-									onKeyUp="getABVal()">
+									onKeyUp="getB2Val()">
 				</td>
 			</tr>
 			<tr>
@@ -265,7 +265,9 @@
 				</td>
 			</tr>
 			<tr>
-				<td id="last"></td>
+				<td id="last" colspan="2">
+					<span id="overlap">check</span>
+				</td>
 			</tr>
 
 		</table>
