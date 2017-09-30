@@ -20,18 +20,30 @@ var C3Val = 55.00;
 var DVal = 50.00;
 var FVal = 0.00;
 
-var vals = [maxVal, A1Val, A2Val, A3Val, B1Val,  B2Val, B3Val,
-            C1Val, C2Val, C3Val, DVal, FVal]
+var vals = [maxVal, A1Val, A2Val, A3Val, B1Val, B2Val, B3Val,
+            C1Val, C2Val, C3Val, DVal, FVal];
 
 function overlapCheck() {
   var overlap = document.getElementById("overlap");
-  for(var i=0; i<vals.length-1; i++) {
-    if(vals[i] <= vals[i+1]){
-      overlap.innerText = "\n Warning! \n There is overlap in the lower bounds! \n Resulting histogram may be inaccurate.";
+
+  for(var i=0; i<((vals.length) - 1); i++) {
+    if(vals[i] < vals[i+1]){
+      overlap.innerText = "\n Warning! \n There is overlap in the lower bounds! \n Resulting histogram may be inaccurate. \n";
       return;
     }
   }
   overlap.innerText = "";
+}
+
+function numericCheck(val){
+  var numCheck = document.getElementById("numCheck");
+
+  if(isNaN(val) == true){
+    numCheck.innerText = "\n Error! \n Please enters numbers only. \n";
+  }
+  else{
+    numCheck.innerText = "";
+  }
 }
 
 function lengthO(low, up) {
@@ -48,6 +60,7 @@ function lengthO(low, up) {
 
 function getMaxVal() {
   var val = document.getElementById("maxVal");
+  numericCheck(val.value);
   vals[0] = parseFloat(val.value);
 
   var length = lengthO(vals[1], vals[0]);
@@ -60,6 +73,7 @@ function getMaxVal() {
 
 function getA1Val() {
   var val = document.getElementById("A1Val");
+  numericCheck(val.value);
   vals[1] = parseFloat(val.value);
 
   var length = lengthO(vals[1], vals[0]);
@@ -76,6 +90,7 @@ function getA1Val() {
 
 function getA2Val() {
   var val = document.getElementById("A2Val");
+  numericCheck(val.value);
   vals[2] = parseFloat(val.value);
 
   var length = lengthO(vals[2], vals[1]);
@@ -92,6 +107,7 @@ function getA2Val() {
 
 function getA3Val() {
   var val = document.getElementById("A3Val");
+  numericCheck(val.value);
   vals[3] = parseFloat(val.value);
 
   var length = lengthO(vals[3], vals[2]);
@@ -108,6 +124,7 @@ function getA3Val() {
 
 function getB1Val() {
   var val = document.getElementById("B1Val");
+  numericCheck(val.value);
   vals[4] = parseFloat(val.value);
 
   var length = lengthO(vals[4], vals[3]);
@@ -219,7 +236,7 @@ function getDVal() {
 }
 
 function getFVal() {
-  var val = document.getElementById("A3Val");
+  var val = document.getElementById("FVal");
   vals[11] = parseFloat(val.value);
 
   var length = lengthO(vals[11], vals[12]);
@@ -227,6 +244,5 @@ function getFVal() {
   var FIn = document.getElementById("FIn");
   FIn.innerText = length;
 
-  var overlap = document.getElementById("overlap");
   overlapCheck();
 }
