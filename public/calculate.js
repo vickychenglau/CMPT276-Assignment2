@@ -51,7 +51,7 @@ function lengthO(low, up) {
 
   for(var i=0; i<grades.length; i++) {
     if((grades[i] >= low) && (grades[i] < up)) {
-      length = length + "O";
+      length = length + "[:)]";
     }
   }
   return length;

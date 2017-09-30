@@ -83,6 +83,11 @@ input{
   float: left;
   text-align: right;
 }
+span{
+  color: cyan;
+  background-color: blue;
+}
 span#overlap, span#numCheck{
   color: red;
+  background-color: #edf5f5;
 }
