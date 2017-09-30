@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Histogram</title>
+	<link rel="stylesheet" href="./histogram.css" type="text/css" />
+	<script type"text/javascript" src="calculate.js" ></script>
+</head>
+
+<body>
+	<div id="main">
+
+	<table width="850" align="center">
+	<tr>
+		<td id="out" colspan="4">
+			<h1>Histogram Generator</h1>
+		</td>
+	</tr>
+	<tr>
+		<td id="indent"></td>
+
+		<td id="out">
+
+		<table id="data" width="410" bgcolor="#edf5f5">
+
+			<tr>
+				<th colspan="2">
+					Lower bounds
+				</th>
+			</tr>
+
+			<tr>
+				<td id="lba">
+					Max
+				</td>
+				<td id="lbb">
+					<input id="maxVal" type="text" size="5" value="100.00"
+									onKeyPress="getMaxVal()"
+									onKeyUp="getMaxVal()">
+				</td>
+			</tr>
+
+			<tr>
+				<td id="lba">
+					A+
+				</td>
+				<td id="lbb">
+					<input id="A1Val" type="text" size="5" value="95.00"
+									onKeyPress="getA1Val()"
+									onKeyUp="getA1Val()">
+				</td>
+			</tr>
+			<tr>
+				<td id="lba">
+					A
+				</td>
+				<td id="lbb">
+					<input id="A2Val" type="text" size="5" value="90.00"
+									onKeyPress="getA2Val()"
+									onKeyUp="getA2Val()">
+				</td>
+			</tr>
+			<tr>
+				<td id="lba">
+					A-
+				</td>
+				<td id="lbb">
+					<input id="A3Val" type="text" size="5" value="85.00"
+									onKeyPress="getA3Val()"
+									onKeyUp="getA3Val()">
+				</td>
+			</tr>
+
+			<tr>
+				<td id="lba">
+					B+
+				</td>
+				<td id="lbb">
+					<input id="B1Val" type="text" size="5" value="80.00"
+									onKeyPress="getB1Val()"
+									onKeyUp="getB1Val()">
+				</td>
+			</tr>
+			<tr>
+				<td id="lba">
+					B
+				</td>
+				<td id="lbb">
+					<input id="B2Val" type="text" size="5" value="75.00"
+									onKeyPress="getB2Val()"
+									onKeyUp="getABVal()">
+				</td>
+			</tr>
+			<tr>
+				<td id="lba">
+					B-
+				</td>
+				<td id="lbb">
+					<input id="B3Val" type="text" size="5" value="70.00"
+									onKeyPress="getB3Val()"
+									onKeyUp="getB3Val()">
+				</td>
+			</tr>
+
+			<tr>
+				<td id="lba">
+					C+
+				</td>
+				<td id="lbb">
+					<input id="C1Val" type="text" size="5" value="65.00"
+									onKeyPress="getC1Val()"
+									onKeyUp="getC1Val()">
+				</td>
+			</tr>
+			<tr>
+				<td id="lba">
+					C
+				</td>
+				<td id="lbb">
+					<input id="C2Val" type="text" size="5" value="60.00"
+									onKeyPress="getC2Val()"
+									onKeyUp="getC2Val()">
+				</td>
+			</tr>
+			<tr>
+				<td id="lba">
+					C-
+				</td>
+				<td id="lbb">
+					<input id="C3Val" type="text" size="5" value="55.00"
+									onKeyPress="getC3Val()"
+									onKeyUp="getC3Val()">
+				</td>
+			</tr>
+
+			<tr>
+				<td id="lba">
+					D
+				</td>
+				<td id="lbb">
+					<input id="DVal" type="text" size="5" value="50.00"
+									onKeyPress="getDVal()"
+									onKeyUp="getDVal()">
+				</td>
+			</tr>
+			<tr>
+				<td id="ha">
+					F
+				</td>
+				<td id="hb">
+					<input id="FVal" type="text" size="5" value="0.00"
+									onKeyPress="getFVal()"
+									onKeyUp="getFVal()">
+				</td>
+			</tr>
+
+			<tr>
+				<td id="last">
+				</td>
+			</tr>
+		</table>
+
+		</td>
+
+		<td id="out"></td>
+
+		<td id="out">
+
+		<table id="data" width="360" bgcolor="#edf5f5">
+			<tr>
+				<th colspan="2">
+					Histogram
+				</th>
+			</tr>
+
+			<tr id="h">
+				<td id="h">
+					A+
+				</td>
+				<td id="h">
+					<span id="A1In">O</span>
+				</td>
+			</tr>
+			<tr id="h">
+				<td id="h">
+					A
+				</td>
+				<td id="h">
+					<span id="A2In">OOO</span>
+				</td>
+			</tr>
+			<tr id="h">
+				<td id="h">
+					A-
+				</td>
+				<td id="h">
+					<span id="A3In">OOO</span>
+				</td>
+			</tr>
+
+			<tr id="h">
+				<td id="h">
+					B+
+				</td>
+				<td id="h">
+					<span id="B1In">OO</span>
+				</td>
+			</tr>
+			<tr id="h">
+				<td id="h">
+					B
+				</td>
+				<td id="h">
+					<span id="B2In">O</span>
+				</td>
+			</tr>
+			<tr id="h">
+				<td id="h">
+					B-
+				</td>
+				<td id="h">
+					<span id="B3In">OOOO</span>
+				</td>
+			</tr>
+
+			<tr id="h">
+				<td id="h">
+					C+
+				</td>
+				<td id="h">
+					<span id="C1In">O</span>
+				</td>
+			</tr>
+			<tr id="h">
+				<td id="h">
+					C
+				</td>
+				<td id="h">
+					<span id="C2In">OO</span>
+				</td>
+			</tr>
+			<tr id="h">
+				<td id="h">
+					C-
+				</td>
+				<td id="h">
+					<span id="C3In">OO</span>
+				</td>
+			</tr>
+
+			<tr id="h">
+				<td id="h">
+					D
+				</td>
+				<td id="h">
+					<span id="DIn">OOO</span>
+				</td>
+			</tr>
+			<tr id="h">
+				<td id="h">
+					F
+				</td>
+				<td id="h">
+					<span id="FIn">OO</span>
+				</td>
+			</tr>
+			<tr>
+				<td id="last"></td>
+			</tr>
+
+		</table>
+
+		</td>
+
+	</tr>
+
+	</table>
+
+	</div>
+</body>
+
+</html>
