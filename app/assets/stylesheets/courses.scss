@@ -1,0 +1,45 @@
+// Place all the styles related to the Courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+h1{
+  margin-left: 5%;
+}
+table{
+  width: 70%;
+  margin-left: 5%;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}
+thead{
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}
+td{
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  padding: 10px;
+  vertical-align: top;
+}
+th{
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  padding: 10px;
+  vertical-align: top;
+}
+div#new{
+  margin-left: 5%;
+}
+div#showCourse{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+p#name{
+  font-size: 24px;
+}
+p#desc{
+  font-size: 16px;
+}
