@@ -1,3 +1,10 @@
+# CMPT 276 Assignment 2
+Grades Histogram with database
+
+URL: https://fierce-bastion-36785.herokuapp.com/
+
+Heroku git URL: https://git.heroku.com/fierce-bastion-36785.git
+
 # ruby-getting-started
 
 A barebones Rails app, which can easily be deployed to Heroku.
