@@ -1,15 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<div id="listing">
 <h1>Listing Enrolls</h1>
+
+<br>
 
 <table>
   <thead>
     <tr>
-      <th>Student</th>
+      <th>Student ID</th>
       <th>Course</th>
       <th>Percentage</th>
-      <th>Lettergrade</th>
-      <th colspan="3"></th>
+      <th>Letter Grade</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -18,18 +21,18 @@
       <tr>
         <td><%= enroll.student_id %></td>
         <td><%= enroll.course_id %></td>
-        <td><%= enroll.percentage %></td>
+        <td><%= enroll.percentage %>%</td>
         <td><%= enroll.lettergrade %></td>
-        <td><%= link_to 'Show', enroll %></td>
-        <td><%= link_to 'Edit', edit_enroll_path(enroll) %></td>
-        <td><%= link_to 'Destroy', enroll, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Show', enroll %> <br>
+          <%= link_to 'Edit', edit_enroll_path(enroll) %> <br>
+          <%= link_to 'Destroy', enroll, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<div id="new">
 <%= link_to 'New Enroll', new_enroll_path %>
 </div>

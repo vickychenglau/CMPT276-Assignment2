@@ -1,12 +1,22 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h1{
+div#listing{
+  margin-left: 10%;
+  margin-right: 10%;
+  align-content: center;
+}
+div#showCourse{
   margin-left: 5%;
+  margin-right: 5%;
+}
+p#name{
+  font-size: 24px;
+}
+p#desc{
+  font-size: 16px;
 }
 table{
-  width: 70%;
-  margin-left: 5%;
   border-width: 1px;
   border-color: black;
   border-style: solid;
@@ -29,17 +39,4 @@ th{
   border-style: solid;
   padding: 10px;
   vertical-align: top;
-}
-div#new{
-  margin-left: 5%;
-}
-div#showCourse{
-  margin-left: 5%;
-  margin-right: 5%;
-}
-p#name{
-  font-size: 24px;
-}
-p#desc{
-  font-size: 16px;
 }

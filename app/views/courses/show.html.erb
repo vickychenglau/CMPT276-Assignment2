@@ -1,4 +1,4 @@
-<div id="showCourse">
+<div id="listing">
 <p id="notice"><%= notice %></p>
 
 <p id="name">
@@ -30,7 +30,7 @@
       <tr>
         <td><%= enroll.student_id %></td>
         <td><%= enroll.course_id %></td>
-        <td><%= enroll.percentage %></td>
+        <td><%= enroll.percentage %>%</td>
         <td><%= enroll.lettergrade %></td>
       </tr>
     <% end %>
@@ -39,6 +39,7 @@
 
 <br>
 
-<%= link_to 'Back', courses_path %>
+<%= link_to 'Back', courses_path %> |
+<a href="/histogram.html">Assign Grades</a>
 
 </div>
