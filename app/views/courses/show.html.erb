@@ -1,6 +1,6 @@
 <div id="listing">
 <p id="notice"><%= notice %></p>
-
+<br>
 <p id="name">
   <strong>Course:</strong>
   <%= @course.course_id %>
@@ -18,7 +18,7 @@
 <table>
   <thead>
     <tr>
-      <th>Student</th>
+      <th>Student ID</th>
       <th>Course</th>
       <th>Percentage</th>
       <th>Lettergrade</th>
@@ -39,7 +39,6 @@
 
 <br>
 
-<%= link_to 'Back', courses_path %> |
-<%= link_to 'Assign Grades', "/histogram.html" %>
-
+<%= link_to 'Back', courses_path %>
+<input type="button" onclick="location.href='/histogram';" value="Assign Grades" />
 </div>

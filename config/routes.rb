@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get '/histogram', :to =>redirect('/histogram.html')
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
