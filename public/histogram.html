@@ -7,7 +7,8 @@
 	<script type"text/javascript" src="./calculate.js" ></script>
 </head>
 
-<body>
+<body onload="initHistogram();">
+
 	<div id="main">
 
 	<table align="center">
@@ -178,7 +179,7 @@
 					A+
 				</td>
 				<td id="h">
-					<span id="A1In">|^v^|</span>
+					<span id="A1In"></span>
 				</td>
 			</tr>
 			<tr id="h">
@@ -186,7 +187,7 @@
 					A
 				</td>
 				<td id="h">
-					<span id="A2In">|^v^||^u^||^v^|</span>
+					<span id="A2In"></span>
 				</td>
 			</tr>
 			<tr id="h">
@@ -194,7 +195,7 @@
 					A-
 				</td>
 				<td id="h">
-					<span id="A3In">|^v^||^u^||^v^|</span>
+					<span id="A3In"></span>
 				</td>
 			</tr>
 
@@ -203,7 +204,7 @@
 					B+
 				</td>
 				<td id="h">
-					<span id="B1In">|^v^||^u^|</span>
+					<span id="B1In"></span>
 				</td>
 			</tr>
 			<tr id="h">
@@ -211,7 +212,7 @@
 					B
 				</td>
 				<td id="h">
-					<span id="B2In">|^v^|</span>
+					<span id="B2In"></span>
 				</td>
 			</tr>
 			<tr id="h">
@@ -219,7 +220,7 @@
 					B-
 				</td>
 				<td id="h">
-					<span id="B3In">|^v^||^u^||^v^||^u^|</span>
+					<span id="B3In"></span>
 				</td>
 			</tr>
 
@@ -228,7 +229,7 @@
 					C+
 				</td>
 				<td id="h">
-					<span id="C1In">|^v^|</span>
+					<span id="C1In"></span>
 				</td>
 			</tr>
 			<tr id="h">
@@ -236,7 +237,7 @@
 					C
 				</td>
 				<td id="h">
-					<span id="C2In">|^v^||^u^|</span>
+					<span id="C2In"> </span>
 				</td>
 			</tr>
 			<tr id="h">
@@ -244,7 +245,7 @@
 					C-
 				</td>
 				<td id="h">
-					<span id="C3In">|^v^||^u^||^v^|</span>
+					<span id="C3In"> </span>
 				</td>
 			</tr>
 
@@ -253,7 +254,7 @@
 					D
 				</td>
 				<td id="h">
-					<span id="DIn">|^v^||^u^||^v^|</span>
+					<span id="DIn"> </span>
 				</td>
 			</tr>
 			<tr id="h">
@@ -261,7 +262,7 @@
 					F
 				</td>
 				<td id="h">
-					<span id="FIn">|^v^||^u^|</span>
+					<span id="FIn"> </span>
 				</td>
 			</tr>
 			<tr>
@@ -272,7 +273,9 @@
 			</tr>
 			<tr>
 				<td>
-					<input type="button" onclick="location.href='/courses';" value="Submit Grades" />
+					<input 	type="button"
+									onclick="setGrades();javascript:history.back()"
+									value="Submit Grades" />
 				</td>
 			</tr>
 

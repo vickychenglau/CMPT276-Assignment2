@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 <br>
 <p>
-  <strong>Student:</strong>
+  <strong>Student ID:</strong>
   <%= @student.student_id %>
 </p>
 
@@ -16,6 +16,31 @@
   <%= @student.email %>
 </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Edit', edit_student_path(@student) %>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>Percentage</th>
+      <th>Lettergrade</th>
+    </tr>
+  </thead>
+  <br>
+  <tbody>
+    <% @enrolls.each do |enroll| %>
+      <tr>
+        <td><%= enroll.course_id %></td>
+        <td><%= enroll.percentage %>%</td>
+        <td><%= enroll.lettergrade %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
 <%= link_to 'Back', students_path %>
 </div>

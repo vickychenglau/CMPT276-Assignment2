@@ -11,6 +11,10 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @enrolls = Enroll.where(course_id: @course.course_id)
+    @eGrades = []
+    @enrolls.each do|enroll|
+      @eGrades << enroll.percentage
+    end
   end
 
   # GET /courses/new

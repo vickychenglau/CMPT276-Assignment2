@@ -1,7 +1,4 @@
-var grades = [65.95, 56.98, 78.62, 96.10, 90.3, 72.24, 92.34,
-              60.00, 81.43, 86.22, 88.33, 9.03, 49.93, 52.34,
-              53.11, 50.10, 88.88, 55.32, 55.69, 61.68,70.44,
-              70.54, 90.00, 71.11, 80.01];
+var grades = [65.95, 56.98, 78.62, 96.10, 90.3, 72.24, 92.34];
 
 var maxVal = 100.00;
 
@@ -22,6 +19,9 @@ var FVal = 0.00;
 
 var vals = [maxVal, A1Val, A2Val, A3Val, B1Val, B2Val, B3Val,
             C1Val, C2Val, C3Val, DVal, FVal];
+
+var letter = ["A+", "A", "A-", "B+", "B", "B-",
+              "C+", "C", "C-", "D", "F"];
 
 function overlapCheck() {
   var overlap = document.getElementById("overlap");
@@ -61,6 +61,59 @@ function lengthO(low, up) {
     }
   }
   return length;
+}
+
+function initHistogram(){
+  grades = <%= @eGrades.to_json %>;
+
+  for(var i=0; i<(grades.length); i++) {
+    grades[i] = parseFloat(grades[i]);
+  }
+
+  var length = lengthO(vals[1], vals[0]);
+  var length2 = lengthO(vals[2], vals[1]);
+
+  var A1In = document.getElementById("A1In");
+  A1In.innerText = length;
+  var A2In = document.getElementById("A2In");
+  A2In.innerText = length2;
+
+  length = lengthO(vals[3], vals[2]);
+  length2 = lengthO(vals[4], vals[3]);
+
+  var A3In = document.getElementById("A3In");
+  A3In.innerText = length;
+  var B1In = document.getElementById("B1In");
+  B1In.innerText = length2;
+
+  length = lengthO(vals[5], vals[4]);
+  length2 = lengthO(vals[6], vals[5]);
+
+  var B2In = document.getElementById("B2In");
+  B2In.innerText = length;
+  var B3In = document.getElementById("B3In");
+  B3In.innerText = length2;
+
+  length = lengthO(vals[7], vals[6]);
+  length2 = lengthO(vals[8], vals[7]);
+
+  var C1In = document.getElementById("C1In");
+  C1In.innerText = length;
+  var C2In = document.getElementById("C2In");
+  C2In.innerText = length2;
+
+  length = lengthO(vals[9], vals[8]);
+  length2 = lengthO(vals[10], vals[9]);
+
+  var C3In = document.getElementById("C3In");
+  C3In.innerText = length;
+  var DIn = document.getElementById("DIn");
+  DIn.innerText = length2;
+
+  length = lengthO(vals[11], vals[10]);
+
+  var FIn = document.getElementById("FIn");
+  FIn.innerText = length;
 }
 
 function getMaxVal() {
@@ -257,4 +310,7 @@ function getFVal() {
   FIn.innerText = length;
 
   overlapCheck();
+}
+
+function setGrades() {
 }
