@@ -15,7 +15,11 @@
 
 <div id="table">
 
-<p><strong>Description:</strong></p>
+<p>
+  <font id="size">
+    <strong>Description:</strong>
+  </font>
+</p>
 <p>
   <font id="size">
     <%= @course.description %>
@@ -38,10 +42,26 @@
   <tbody>
     <% @enrolls.each do |enroll| %>
       <tr>
-        <td><%= enroll.student_id %></td>
-        <td><%= enroll.course_id %></td>
-        <td><%= enroll.percentage %>%</td>
-        <td><%= enroll.lettergrade %></td>
+        <td>
+          <font id="size">
+            <%= enroll.student_id %>
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= enroll.course_id %>
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= enroll.percentage %>%
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= enroll.lettergrade %>
+          </font>
+        </td>
       </tr>
     <% end %>
     <tr>

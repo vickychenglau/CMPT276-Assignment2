@@ -20,14 +20,32 @@
   <tbody>
     <% @enrolls.each do |enroll| %>
       <tr>
-        <td><%= enroll.student_id %></td>
-        <td><%= enroll.course_id %></td>
-        <td><%= enroll.percentage %>%</td>
-        <td><%= enroll.lettergrade %></td>
         <td>
-          <%= link_to 'Show', enroll %>
-          <%= link_to 'Edit', edit_enroll_path(enroll) %>
-          <%= link_to 'Destroy', enroll, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <font id="size">
+            <%= enroll.student_id %>
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= enroll.course_id %>
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= enroll.percentage %>%
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= enroll.lettergrade %>
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= link_to 'Show', enroll %>
+            <%= link_to 'Edit', edit_enroll_path(enroll) %>
+            <%= link_to 'Destroy', enroll, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </font>
         </td>
       </tr>
       <% end %>

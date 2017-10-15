@@ -19,13 +19,27 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= student.student_id %></td>
-        <td><%= student.name %></td>
-        <td><%= student.email %></td>
         <td>
-          <%= link_to 'Show', student %>
-          <%= link_to 'Edit', edit_student_path(student) %>
-          <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <font id="size">
+            <%= student.student_id %>
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= student.name %>
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= student.email %>
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= link_to 'Show', student %>
+            <%= link_to 'Edit', edit_student_path(student) %>
+            <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </font>
         </td>
       </tr>
     <% end %>

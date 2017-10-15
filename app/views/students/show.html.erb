@@ -6,18 +6,24 @@
 <hr>
 <div id="table">
 <p>
-  <strong>Student ID:</strong>
-  <%= @student.student_id %>
+  <font id="size">
+    <strong>Student ID:</strong>
+    <%= @student.student_id %>
+  </font>
 </p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @student.name %>
+  <font id="size">
+    <strong>Name:</strong>
+    <%= @student.name %>
+  </font>
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @student.email %>
+  <font id="size">
+    <strong>Email:</strong>
+    <%= @student.email %>
+  </font>
 </p>
 
 <p id="edit">
@@ -36,9 +42,21 @@
   <tbody>
     <% @enrolls.each do |enroll| %>
       <tr>
-        <td><%= enroll.course_id %></td>
-        <td><%= enroll.percentage %>%</td>
-        <td><%= enroll.lettergrade %></td>
+        <td>
+          <font id="size">
+            <%= enroll.course_id %>
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= enroll.percentage %>%
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= enroll.lettergrade %>
+          </font>
+        </td>
       </tr>
     <% end %>
   </tbody>
