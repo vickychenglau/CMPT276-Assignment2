@@ -47,11 +47,13 @@ h1 {
 table#center{
   margin-left: auto;
   margin-right: auto;
+  font-size: 18px;
 }
 thead{
   border-width: 1px;
   border-color: black;
   border-style: solid;
+  font-size: 18px;
 }
 td{
   border-width: 1px;
@@ -68,6 +70,7 @@ td#back{
   padding-right: 0px;
   padding-left: 0px;
   vertical-align: middle;
+  font-size: 18px;
 }
 td#fields{
   border-width: 0px;
@@ -79,12 +82,14 @@ td#links{
   padding: 0px;
   text-align: right;
   vertical-align: middle;
+  font-size: 18px;
 }
 td#desc{
   border-width: 0px;
   padding: 0px;
   text-align: left;
   vertical-align: middle;
+  font-size: 18px;
 }
 th{
   border-width: 1px;
