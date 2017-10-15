@@ -64,11 +64,6 @@ function lengthO(low, up) {
 }
 
 function initHistogram(){
-  grades = <%= @eGrades.to_json %>;
-
-  for(var i=0; i<(grades.length); i++) {
-    grades[i] = parseFloat(grades[i]);
-  }
 
   var length = lengthO(vals[1], vals[0]);
   var length2 = lengthO(vals[2], vals[1]);

@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div id="listing">
-<h1>Listing Students</h1>
+<h1>All Students</h1>
 
 <br>
 
+<div id="table">
 <table>
   <thead>
     <tr>
@@ -23,13 +24,14 @@
         <td><%= student.email %></td>
         <td>
           <%= link_to 'Show', student %>
-          <%= link_to 'Edit', edit_student_path(student) %>  
+          <%= link_to 'Edit', edit_student_path(student) %>
           <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

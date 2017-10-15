@@ -1,10 +1,18 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: "Arial", sans-serif;
+}
 div#listing{
-  margin-left: 10%;
-  margin-right: 10%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
   align-content: center;
+  font-size: 16px;
   color: black;
 }
 div#showCourse{
@@ -13,16 +21,24 @@ div#showCourse{
 }
 div#ag{
 }
+div#table{
+  margin-left: 50px;
+  margin-right: 50px;
+}
 p#name{
   font-size: 24px;
 }
 p#desc{
   font-size: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-table{
-  border-width: 1px;
-  border-color: black;
-  border-style: solid;
+p#edit{
+  margin-left: 20px;
+  text-align: right;
+}
+h1 {
+  padding-bottom: 20px;
 }
 thead{
   border-width: 1px;
@@ -36,10 +52,37 @@ td{
   padding: 10px;
   vertical-align: top;
 }
+td#back{
+  border-width: 0px;
+  border-color: black;
+  border-style: solid;
+  padding-right: 0px;
+  padding-left: 0px;
+  vertical-align: middle;
+}
+td#fields{
+  border-width: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+td#links{
+  border-width: 0px;
+  padding: 0px;
+  text-align: right;
+  vertical-align: middle;
+}
+td#desc{
+  border-width: 0px;
+  padding: 0px;
+  text-align: left;
+  vertical-align: middle;
+}
 th{
   border-width: 1px;
   border-color: black;
   border-style: solid;
   padding: 10px;
   vertical-align: top;
+  background-color: #edf5f5;
+  color: #d51616;
 }

@@ -1,27 +1,27 @@
 body{
   height: 100%;
-  margin: 0;
   font-size: 100%;
+  font-family: "Arial", sans-serif;
 }
 div#main{
   min-height: 100%;
   width: 1000px;
-  margin-left:auto;
-  margin-right: auto;
+  margin-left: 5%;
+  margin-right: 5%;
   padding-top: 30px;
   padding-bottom: 150px;
   background-color: white;
 }
 h1 {
-  font-family: "Arial", sans-serif;
   padding-bottom: 20px;
 }
 table#data{
   border-width: 1px;
   border-style: solid;
   border-radius: 5px;
-  border-color: #c8d8ea;
+  border-color: grey;
   border-collapse: collapse;
+  background-color: #edf5f5;
   align-content: left;
 }
 th{
@@ -29,7 +29,6 @@ th{
   padding-top: 15px;
   padding-bottom: 30px;
   vertical-align: top;
-  font-family: serif;
   color: #d51616;
   font-size: 18px;
   text-align: left;
@@ -74,8 +73,17 @@ td#last{
   padding-left: 20px;
   padding-bottom: 40px;
 }
+td#warning{
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
 td#indent{
   padding-left: 20px;
+}
+td#button{
+  text-align: right;
+  padding-left: 20px;
+  padding-bottom: 10px;
 }
 input{
   float: left;

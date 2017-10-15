@@ -7,20 +7,28 @@
 
 <div id="listing">
 <p id="notice"><%= notice %></p>
-<br>
 <p id="name">
-  <strong>Course:</strong>
-  <%= @course.course_id %>
+  <h1><%= @course.course_id %></h1>
+
 </p>
 
-<p id="desc">
-  <strong>Description:</strong>
-  <br>
-  <%= @course.description %>
-</p>
-<%= link_to 'Edit', edit_course_path(@course) %>
+<div id="table">
 
-<br>
+<table>
+  <tr>
+    <td id="desc">
+      <p><strong>Description:</strong></p>
+      <p><%= @course.description %></p>
+    </td>
+  </tr>
+  <tr>
+    <td id="links">
+      <p id="edit">
+        <%= link_to 'Edit', edit_course_path(@course) %>
+      </p>
+    </td>
+  </tr>
+</table>
 
 <table>
   <thead>
@@ -28,7 +36,7 @@
       <th>Student ID</th>
       <th>Course</th>
       <th>Percentage</th>
-      <th>Lettergrade</th>
+      <th>Letter Grade</th>
     </tr>
   </thead>
   <br>
@@ -41,13 +49,18 @@
         <td><%= enroll.lettergrade %></td>
       </tr>
     <% end %>
+    <tr>
+      <td id="links" colspan=4>
+        <br>
+        <input  type="button"
+                onclick="location.href='/histogram';"
+                value="Assign Grades" />
+      </td>
+    </tr>
   </tbody>
 </table>
-
-<br>
+</div>
 
 <%= link_to 'Back', courses_path %>
-<input  type="button"
-        onclick="location.href='/histogram';"
-        value="Assign Grades" />
+
 </div>
