@@ -3,7 +3,7 @@
 <div id="listing">
 <h1>All Courses</h1>
 
-<br>
+<hr>
 
 <div id="table">
 <table>
@@ -27,16 +27,17 @@
         </td>
       </tr>
     <% end %>
+    <tr>
+      <td id="links" colspan="3">
+        <br>
+        <%= link_to 'New Course', new_course_path %>
+      </td>
+    </tr>
   </tbody>
 </table>
 </div>
 
-<br>
-
-<%= link_to 'New Course', new_course_path %>
-
-<br>
-<br>
+<hr>
 
 <%= link_to 'View All Students', :controller =>"students" %> |
 <%= link_to 'View All Enrollments', :controller =>"enrolls" %>

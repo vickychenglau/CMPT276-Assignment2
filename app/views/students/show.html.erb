@@ -1,6 +1,10 @@
 <div id="listing">
 <p id="notice"><%= notice %></p>
-<br>
+
+<h1>Show Student</h1>
+
+<hr>
+<div id="table">
 <p>
   <strong>Student ID:</strong>
   <%= @student.student_id %>
@@ -16,12 +20,11 @@
   <%= @student.email %>
 </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %>
+<p id="edit">
+  <%= link_to 'Edit', edit_student_path(@student) %>
+</p>
 
-<br>
-
-<div id="table">
-<table>
+<table id="center" align="center">
   <thead>
     <tr>
       <th>Course</th>
@@ -42,7 +45,7 @@
 </table>
 </div>
 
-<br>
+<hr>
 
 <%= link_to 'Back', students_path %>
 </div>

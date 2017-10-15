@@ -13,6 +13,7 @@ div#listing{
   margin-right: auto;
   margin-top: 50px;
   align-content: center;
+  align-items: center;
   color: black;
 }
 div#showCourse{
@@ -38,6 +39,10 @@ p#edit{
 }
 h1 {
   padding-bottom: 20px;
+}
+table#center{
+  margin-left: auto;
+  margin-right: auto;
 }
 thead{
   border-width: 1px;
