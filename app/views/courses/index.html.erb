@@ -18,12 +18,22 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= course.course_id %></td>
-        <td><%= course.description %></td>
         <td>
-          <%= link_to 'Show', course %> <br>
-          <%= link_to 'Edit', edit_course_path(course) %> <br>
-          <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <font id="size">
+            <%= course.course_id %>
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= course.description %>
+          </font>
+        </td>
+        <td>
+          <font id="size">
+            <%= link_to 'Show', course %> <br>
+            <%= link_to 'Edit', edit_course_path(course) %> <br>
+            <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </font>
         </td>
       </tr>
     <% end %>

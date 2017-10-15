@@ -16,7 +16,11 @@
 <div id="table">
 
 <p><strong>Description:</strong></p>
-<p><%= @course.description %></p>
+<p>
+  <font id="size">
+    <%= @course.description %>
+  </font>
+</p>
 <p id="edit">
   <%= link_to 'Edit', edit_course_path(@course) %>
 </p>
